@@ -24,7 +24,7 @@ $r->add("GET", "/imgflip", function ($req, $res) {
 	$adapter = new ImgFlipAdapter();
 
 	$fucktory = new MemeFactory($adapter);
-	$meme = $fucktory->get();
+	$memes = $fucktory->get();
 });
 
 $r->add("GET", "", function ($req, $res) {
@@ -33,8 +33,8 @@ $r->add("GET", "", function ($req, $res) {
 	$adapters[] = new RedditAdapter("me_irl");
 
 	$fucktory = new MemeFactory($adapters);
-	$memes = $fucktory->getAsJson();
-	echo $memes;
+	$memes = json_decode($fucktory->getAsJson(), true);
+	include "gayTemplate.php";
 });
 
 $r->dispatch();

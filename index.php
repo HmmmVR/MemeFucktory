@@ -30,7 +30,7 @@ $r->add("GET", "/imgflip", function ($req, $res) {
 $r->add("GET", "", function ($req, $res) {
 	$adapters = [];
 	// $adapters[] = new ImgFlipAdapter();
-	$adapters[] = new RedditAdapter("me_irl");
+	$adapters[] = new RedditAdapter("meirl");
 
 	$fucktory = new MemeFactory($adapters);
 	$memes = json_decode($fucktory->getAsJson(), true);

@@ -1,5 +1,7 @@
 <?php
 
+use MemeBoy\Util\Helper;
+
 ?>
 
 <!DOCTYPE html>
@@ -53,8 +55,10 @@
 			?>
 
 			<li class="meme">
-				<h3><?= $meme['title'] ?></h3>
-				<img width="300" src="<?= $meme['img'] ?>" alt="">
+				<a href="<?= $meme['author'] ?>">
+					<h3><?= Helper::removeVowels(strtolower($meme['title'])) ?></h3>
+					<img width="300" src="<?= $meme['img'] ?>" alt="">
+				</a>
 			</li>
 
 			<?	

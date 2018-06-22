@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/src/MemeBoy/Util/Helper.php';
 require_once __DIR__ . "/src/MemeBoy/Util/Autoloader.php";
 
 use \MemeBoy\Util\Autoloader;

@@ -5,7 +5,7 @@ namespace MemeBoy\Meme\Adapter;
 use \MemeBoy\Http\Factory as HttpRequest;
 use \MemeBoy\Meme\Meme;
 
-class ImgFlip
+class ImgFlip implements Adapter
 {
 	const URL = "https://api.imgflip.com/get_memes";
 

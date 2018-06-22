@@ -29,7 +29,7 @@ $r->add("GET", "/imgflip", function ($req, $res) {
 
 $r->add("GET", "", function ($req, $res) {
 	$adapters = [];
-	$adapters[] = new ImgFlipAdapter();
+	// $adapters[] = new ImgFlipAdapter();
 	$adapters[] = new RedditAdapter("me_irl");
 
 	$fucktory = new MemeFactory($adapters);

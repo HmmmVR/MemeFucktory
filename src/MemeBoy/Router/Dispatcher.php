@@ -79,7 +79,7 @@ class Dispatcher
 				continue;
 			}
 			
-			if ($match[0] != ':')
+			if (isset($match[0]) && $match[0] != ':')
 			{
 				continue;
 			}

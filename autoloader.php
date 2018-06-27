@@ -10,6 +10,8 @@ function autoload()
 	$a = new Autoloader();
 	$r = __DIR__ . "/src/MemeBoy";
 
+	$a->addFolder($r . "/Util/Event");
+
 	$a->addFile($r . "/Http/Request.php");
 	$a->addFile($r . "/Http/Response.php");
 	$a->addFile($r . "/Http/Factory.php");

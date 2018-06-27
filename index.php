@@ -37,4 +37,43 @@ $r->add("GET", "", function ($req, $res) {
 	include "gayTemplate.php";
 });
 
+$r->setPrefix("");
+$r->add("GET", "test/event", function ($req, $res) {
+
+	class MyChild extends \MemeBoy\Util\Event\Eventable
+	{
+		public function __construct()
+		{
+			parent::__construct("MyChild");
+		}
+	}
+
+	$c = new MyChild();
+	
+	$s = $c->getStorage();
+	
+	$s->add("get", function($event, $data) {
+		echo "{$event}\n{$data['name']}\n";
+	});
+	
+	$s->beforeEach(function($event, $data) {
+		echo "before each\n";
+	});
+
+	$s->afterEach(function($event, $data) {
+		echo "after each\n";
+	});
+
+	$s->before(function($event, $data) {
+		echo "before\n";
+	});
+
+	$s->after(function($event, $data) {
+		echo "after\n";
+	});
+
+	$c->dispatchEvent('get', ['name' => 'event']);
+
+});
+
 $r->dispatch();

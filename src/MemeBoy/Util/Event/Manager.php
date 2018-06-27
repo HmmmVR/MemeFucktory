@@ -27,6 +27,11 @@ class Manager
 		return $storage;
 	}
 
+	/**
+	 * Add existing storage to manager
+	 * @param object \MemeBoy\Util\Event\Storage
+	 * @return object \MemeBoy\Util\Event\Storage
+	 */
 	public static function addExisting($storage)
 	{
 		self::$storage[$storage->getName()] = $storage;

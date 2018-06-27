@@ -63,6 +63,10 @@ class Dispatcher
 		}
 	}
 
+	/**
+	 * Match request url with path to get params
+	 * @return array
+	 */
 	public function match()
 	{
 		$path = $this->regex;
